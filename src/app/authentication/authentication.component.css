@@ -1,0 +1,30 @@
+input.text{
+    font-size: 16px;
+}
+
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    width: 70%;
+    text-align: center;
+}
+
+p.submit-text {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: green;
+}
+span.mobile-text {
+    font-size: 13px;
+}
+input.form-control.input-text {
+    width: 50%;
+}
+button.btn.btn-primary.btntext1 {
+    float: right;
+    margin-right: 41%;
+    margin-top: -6%;
+}

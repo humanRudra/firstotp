@@ -1,0 +1,54 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5 col-12 offset-md-3">
+            <div *ngIf = "!submitted"  class="card pt-5 pb-5 pl-5 pr-5">
+                <div class="card-body"> 
+                    <div class="card-title">
+                        <h1 class="text-center pb-3">
+                            Login
+                        </h1>
+                    </div>
+                    <form class="m-auto d-block"  [formGroup]="login" >
+                        <input class="text" type="text"  formControlName="mobileNumber" placeholder="Enter your mobile number.">&nbsp;&nbsp;<button class="btn btn-primary btn-lg" [disabled]="!login.valid" (click) = "getOtp()">Get OTP</button>
+                    
+                        <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class="alert alert-danger">
+                            <div *ngIf="f.mobileNumber.errors.required">Mobile Number is required.</div>
+                            <div *ngIf="f.mobileNumber.errors.pattern">Please, Enter 10 digit valid Mobile Number.</div>
+                        </div>
+                    </form>
+                </div>
+                 
+            </div>
+            
+        </div>
+    </div>
+    <p class="submit-text" *ngIf = "submitted">Your One time password:{{otp}}</p>
+</div>
+
+
+
+
+
+
+<!--otp Window-->
+<div *ngIf = "submitted" class=" container">
+    <div class="row">
+        <div class="col-md-5 col-12 offset-md-3">
+            <div class="card ">
+                <div class="card-body">
+                    <h5 class="m-0">Mobile phone verification</h5><span class="mobile-text">Enter the code we just send on your mobile phone <b class="text-danger">{{mobile}}</b></span>
+                <div class=" mt-5">
+                    <form  [formGroup]="verifylogin">
+                    <input type="text" formControlName = "otp" class="form-control  input-text" autofocus="">
+                    <button class="btn btn-primary btntext1"  (click) = "verifyOtp()">OK</button>
+                      
+                </form>
+                </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
